@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="address.book.FXML_search_productController">
+    <children>
+      <fx:include source="FXML_navbar.fxml" />  
+      <Pane layoutX="116.0" layoutY="24.0" prefHeight="70.0" prefWidth="800.0" styleClass="title" AnchorPane.bottomAnchor="506.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="24.0">
+         <children>
+            <Label layoutX="28.0" layoutY="18.0" styleClass="title" text="SEARCH PRODUCT">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Label>
+            <TextField fx:id="search" layoutX="400.0" layoutY="23.0" onKeyReleased="#onSearch" prefHeight="25.0" prefWidth="238.0" promptText="Search here..." />
+         </children>
+      </Pane>
+      <TableView fx:id="products" editable="true" layoutX="61.0" layoutY="130.0" prefHeight="193.0" prefWidth="690.0" styleClass="table">
+        <columns>
+          <TableColumn fx:id="barcode" prefWidth="88.0" text="Barcode" />
+          <TableColumn fx:id="name" prefWidth="290.0" text="Name" />
+            <TableColumn fx:id="qty" prefWidth="122.0" text="Remaining Quantity" />
+            <TableColumn fx:id="p_price" prefWidth="96.0" text="Purchase price" />
+            <TableColumn fx:id="s_price" prefWidth="93.0" text="Sell price" />
+        </columns>
+      </TableView>
+      <HBox layoutX="63.0" layoutY="373.0" spacing="10.0">
+         <children>
+            <VBox layoutX="88.0" layoutY="373.0">
+               <children>
+                  <Label layoutX="88.0" layoutY="373.0" text="Barcode" />
+                  <TextField fx:id="edit_barcode" editable="false" layoutX="88.0" layoutY="406.0" />
+               </children>
+            </VBox>
+            <VBox layoutX="271.0" layoutY="373.0">
+               <children>
+                  <Label layoutX="88.0" layoutY="373.0" text="Name" />
+                  <TextField fx:id="edit_name" layoutX="88.0" layoutY="406.0" />
+               </children>
+            </VBox>
+            <VBox layoutX="440.0" layoutY="373.0">
+               <children>
+                  <Label layoutX="88.0" layoutY="373.0" text="Remaining Quantity" />
+                  <TextField fx:id="edit_qty" editable="false" layoutX="88.0" layoutY="406.0" prefHeight="25.0" prefWidth="83.0" />
+               </children>
+            </VBox>
+            <VBox layoutX="564.0" layoutY="373.0">
+               <children>
+                  <Label layoutX="88.0" layoutY="373.0" text="Purchase Price" />
+                  <TextField fx:id="edit_p_price" layoutX="88.0" layoutY="406.0" prefHeight="25.0" prefWidth="83.0" />
+               </children>
+            </VBox>
+            <VBox layoutX="668.0" layoutY="373.0">
+               <children>
+                  <Label layoutX="88.0" layoutY="373.0" text="Sell Price" />
+                  <TextField fx:id="edit_s_price" layoutX="88.0" layoutY="406.0" prefHeight="25.0" prefWidth="83.0" />
+               </children>
+            </VBox>
+            <Button fx:id="update" mnemonicParsing="false" onAction="#onUpdate" text="Update">
+               <HBox.margin>
+                  <Insets top="16.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+    </children>
+</AnchorPane>

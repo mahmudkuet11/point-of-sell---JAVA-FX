@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="address.book.FXML_new_voucherController">
+    <children>
+        <fx:include source="FXML_navbar.fxml" />  
+      <Pane layoutX="116.0" layoutY="24.0" prefHeight="70.0" prefWidth="800.0" styleClass="title" AnchorPane.bottomAnchor="506.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="24.0">
+         <children>
+            <Label layoutX="28.0" layoutY="18.0" styleClass="title" text="NEW VOUCHER">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="scannedBarcode" layoutX="536.0" layoutY="19.0" onAction="#onBarcodeScanned" prefHeight="25.0" prefWidth="231.0" promptText="Scan Barcode" />
+            
+         </children>
+      </Pane>
+      <TableView fx:id="table" layoutX="27.0" layoutY="100.0" prefHeight="179.0" prefWidth="742.0">
+        <columns>
+          <TableColumn fx:id="barcode" prefWidth="89.0" text="Barcode" />
+          <TableColumn fx:id="name" prefWidth="423.0" text="Name" />
+            <TableColumn fx:id="quantity" minWidth="0.0" prefWidth="115.0" text="Quantity" />
+            <TableColumn fx:id="price" prefWidth="113.0" text="Unit Price" />
+        </columns>
+      </TableView>
+      <VBox layoutX="27.0" layoutY="300.0" spacing="5.0">
+         <children>
+            <Label layoutX="27.0" layoutY="300.0" text="Barcode" />
+            <TextField fx:id="edit_barcode" editable="false" layoutX="27.0" layoutY="317.0" prefHeight="25.0" prefWidth="76.0" />
+         </children>
+      </VBox>
+      <VBox layoutX="119.0" layoutY="300.0" prefHeight="47.0" prefWidth="284.0" spacing="5.0">
+         <children>
+            <Label layoutX="27.0" layoutY="300.0" text="Name" />
+            <TextField fx:id="edit_name" layoutX="27.0" layoutY="317.0" prefHeight="25.0" prefWidth="76.0" />
+         </children>
+      </VBox>
+      <VBox layoutX="424.0" layoutY="300.0" spacing="5.0">
+         <children>
+            <Label layoutX="27.0" layoutY="300.0" text="Quantity" />
+            <TextField fx:id="edit_qty" layoutX="27.0" layoutY="317.0" prefHeight="25.0" prefWidth="76.0" />
+         </children>
+      </VBox>
+      <VBox layoutX="518.0" layoutY="300.0" spacing="5.0">
+         <children>
+            <Label layoutX="27.0" layoutY="300.0" text="Price" />
+            <TextField fx:id="edit_s_price" editable="false" layoutX="27.0" layoutY="317.0" prefHeight="25.0" prefWidth="76.0" />
+         </children>
+      </VBox>
+      <Button fx:id="update" layoutX="609.0" layoutY="315.0" mnemonicParsing="false" onAction="#onUpdateClicked" text="Update" AnchorPane.topAnchor="320.0" />
+      <Separator layoutX="27.0" layoutY="358.0" prefHeight="17.0" prefWidth="749.0" />
+      <VBox layoutX="27.0" layoutY="382.0" spacing="5.0">
+         <children>
+            <Label layoutX="27.0" layoutY="300.0" text="Total" />
+            <TextField fx:id="total" editable="false" layoutX="27.0" layoutY="317.0" prefHeight="25.0" prefWidth="76.0" text="0" />
+         </children>
+      </VBox>
+      <VBox layoutX="119.0" layoutY="382.0" spacing="5.0">
+         <children>
+            <Label layoutX="27.0" layoutY="300.0" text="Discount" />
+            <TextField fx:id="discount" layoutX="27.0" layoutY="317.0" onKeyReleased="#calculateDue" prefHeight="25.0" prefWidth="76.0" text="0" />
+         </children>
+      </VBox>
+      <VBox layoutX="211.0" layoutY="382.0" spacing="5.0">
+         <children>
+            <Label layoutX="27.0" layoutY="300.0" text="Paid" />
+            <TextField fx:id="paid" layoutX="27.0" layoutY="317.0" onKeyReleased="#calculateDue" prefHeight="25.0" prefWidth="76.0" text="0" />
+         </children>
+      </VBox>
+      <VBox layoutX="303.0" layoutY="382.0" spacing="5.0">
+         <children>
+            <Label layoutX="27.0" layoutY="300.0" text="Due" />
+            <TextField fx:id="due" editable="false" layoutX="27.0" layoutY="317.0" onKeyReleased="#calculateDue" prefHeight="25.0" prefWidth="76.0" text="0" />
+         </children>
+      </VBox>
+      <Separator layoutX="24.0" layoutY="444.0" prefHeight="17.0" prefWidth="749.0" />
+      <VBox layoutX="24.0" layoutY="470.0" spacing="5.0">
+         <children>
+            <Label layoutX="27.0" layoutY="300.0" text="Customer name" />
+            <TextField fx:id="customer_name" layoutX="27.0" layoutY="317.0" prefHeight="25.0" prefWidth="278.0" />
+         </children>
+      </VBox>
+      <VBox layoutX="24.0" layoutY="531.0" spacing="5.0">
+         <children>
+            <Label layoutX="27.0" layoutY="300.0" text="Phone number" />
+            <TextField fx:id="phone" layoutX="27.0" layoutY="317.0" prefHeight="25.0" prefWidth="278.0" />
+         </children>
+      </VBox>
+      <Button layoutX="568.0" layoutY="519.0" mnemonicParsing="false" onAction="#confirmVoucherButtonClick" text="Confirm voucher and Print" />
+      <Label fx:id="error" layoutX="424.0" layoutY="406.0" styleClass="error_label" text="Please enter discount and paid amount correctly" textFill="#f29a9a" visible="false">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" styleClass="container" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="address.book.FXML_add_new_categoryController">
+   <children>
+      <fx:include source="FXML_navbar.fxml" />  
+      <Pane layoutX="116.0" layoutY="24.0" prefHeight="70.0" prefWidth="800.0" styleClass="title" AnchorPane.bottomAnchor="506.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="24.0">
+         <children>
+            <Label layoutX="28.0" layoutY="18.0" styleClass="title" text="ADD NEW CATEGORY">
+               <font>
+                  
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <HBox layoutX="204.0" layoutY="183.0" spacing="30.0">
+         <children>
+            <Label layoutX="204.0" layoutY="187.0" text="Category name">
+               <HBox.margin>
+                  
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="name" layoutX="315.0" layoutY="183.0" prefHeight="25.0" prefWidth="335.0" />
+         </children>
+
+      </HBox>
+      <HBox layoutX="204.0" layoutY="220.0" spacing="18.0">
+         <children>
+            <Label layoutX="204.0" layoutY="187.0" text="Warning Quantity">
+               <HBox.margin>
+                  
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="warning_quantity" layoutX="315.0" layoutY="183.0" prefHeight="25.0" prefWidth="335.0" />
+         </children>
+
+      </HBox>
+      <HBox layoutX="204.0" layoutY="256.0" spacing="35.0" AnchorPane.topAnchor="256.0">
+         <children>
+            <Label layoutX="204.0" layoutY="187.0" text="Purchase price">
+               <HBox.margin>
+                  
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="purchase_price" layoutX="315.0" layoutY="183.0" prefHeight="25.0" prefWidth="335.0" />
+         </children>
+
+      </HBox>
+      <HBox layoutX="204.0" layoutY="291.0" spacing="65.0">
+         <children>
+            <Label layoutX="204.0" layoutY="187.0" text="Sell price">
+               <HBox.margin>
+                  
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="sell_price" layoutX="315.0" layoutY="183.0" prefHeight="25.0" prefWidth="335.0" />
+         </children>
+
+      </HBox>
+      <HBox layoutX="205.0" layoutY="147.0" spacing="65.0">
+         <children>
+            <Label layoutX="204.0" layoutY="187.0" text="Barcode">
+               <HBox.margin>
+                  
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="barcode" layoutX="315.0" layoutY="183.0" prefHeight="25.0" prefWidth="335.0" />
+         </children>
+
+      </HBox>
+      <Button fx:id="add_category_btn" layoutX="562.0" layoutY="328.0" mnemonicParsing="false" onMouseClicked="#onAddCategoryButtonClick" text="Add category" />
+   </children>
+</AnchorPane>

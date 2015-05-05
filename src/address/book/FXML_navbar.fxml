@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" styleClass="container" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="address.book.FXML_navbarController">
+   <children>
+      <MenuBar fx:id="menubar" layoutX="142.0" layoutY="114.0" prefHeight="25.0" prefWidth="800.0" AnchorPane.bottomAnchor="579.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+            <Menu mnemonicParsing="false" text="sell">
+               <items>
+                  <MenuItem fx:id="new_voucher" mnemonicParsing="false" onAction="#onMenuitemClick" text="New voucher" />
+                  <MenuItem fx:id="search_voucher" mnemonicParsing="false" onAction="#onMenuitemClick" text="Search voucher" />
+               </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Stock">
+            <items>
+              <MenuItem fx:id="add_new_product" mnemonicParsing="false" onAction="#onMenuitemClick" text="Add new product" />
+                  <MenuItem fx:id="search_product" mnemonicParsing="false" onAction="#onMenuitemClick" text="Search product" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Manage">
+            <items>
+              <MenuItem fx:id="add_new_cat" mnemonicParsing="false" onAction="#onMenuitemClick" text="Add new category" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>

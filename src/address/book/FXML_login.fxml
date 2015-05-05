@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #34495e;" styleClass="container" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="address.book.loginController">
+   <children>
+      <HBox alignment="CENTER_LEFT" layoutX="266.0" layoutY="158.0" prefHeight="43.0" prefWidth="346.0" spacing="30.0">
+         <children>
+            <Label text="Username" textFill="#cccccc">
+
+            </Label>
+            <TextField fx:id="username_input" prefHeight="29.0" prefWidth="254.0" promptText="Please Enter username" style="-fx-background-color: transparent; -fx-border-color: #e1e1e1; -fx-text-fill: #fff; -fx-border-width: 2px;" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="270.0" layoutY="212.0" prefHeight="43.0" prefWidth="346.0" spacing="30.0">
+         <children>
+            <Label text="Password" textFill="#cccccc">
+
+            </Label>
+            <TextField fx:id="password_input" prefHeight="29.0" prefWidth="254.0" promptText="Please Enter Password" style="-fx-background-color: transparent; -fx-border-color: #e1e1e1; -fx-text-fill: #fff; -fx-border-width: 2px;" />
+         </children>
+      </HBox>
+      <Button fx:id="login_btn" defaultButton="true" layoutX="553.0" layoutY="274.0" mnemonicParsing="false" onMouseClicked="#loginButtonClick" style="-fx-pref-width: 80px; -fx-background-color: transparent; -fx-border-width: 2px; -fx-border-color: #e1e1e1;" text="Login" textFill="#e1e1e1">
+
+         <cursor>
+            
+         </cursor>
+      </Button>
+      <Label fx:id="error_label" layoutX="352.0" layoutY="122.0" prefHeight="17.0" prefWidth="206.0" text="Failed to login! Please try again" textFill="#ff6060" />
+   </children>
+</AnchorPane>
+

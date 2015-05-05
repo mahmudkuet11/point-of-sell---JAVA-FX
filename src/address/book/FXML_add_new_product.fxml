@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" styleClass="container" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="address.book.FXML_add_new_productController">
+    <children>
+        <fx:include source="FXML_navbar.fxml" />  
+        <Pane layoutX="116.0" layoutY="24.0" prefHeight="70.0" prefWidth="800.0" styleClass="title" AnchorPane.bottomAnchor="506.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="24.0">
+         <children>
+            <Label layoutX="28.0" layoutY="18.0" styleClass="title" text="ADD NEW PRODUCT">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Label>
+         </children>
+      </Pane>
+      <HBox layoutX="262.0" layoutY="168.0" spacing="50.0">
+         <children>
+            <Label layoutX="154.0" layoutY="180.0" text="Barcode">
+               <HBox.margin>
+                  <Insets top="3.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="barcode" layoutX="228.0" layoutY="176.0" onAction="#onBarcodeEnter" prefHeight="25.0" prefWidth="289.0" />
+         </children>
+      </HBox>
+      <HBox layoutX="262.0" layoutY="205.0" spacing="47.0">
+         <children>
+            <Label layoutX="154.0" layoutY="180.0" text="Category">
+               <HBox.margin>
+                  <Insets top="3.0" />
+               </HBox.margin>
+            </Label>
+            <ComboBox fx:id="category" onAction="#onSelectCategory" prefHeight="25.0" prefWidth="288.0" promptText="Select a Category" />
+         </children>
+      </HBox>
+      <HBox layoutX="263.0" layoutY="241.0" spacing="48.0">
+         <children>
+            <Label layoutX="154.0" layoutY="180.0" text="Quantity">
+               <HBox.margin>
+                  <Insets top="3.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="quantity" layoutX="228.0" layoutY="176.0" prefHeight="25.0" prefWidth="289.0" />
+         </children>
+      </HBox>
+      <Button layoutX="601.0" layoutY="279.0" mnemonicParsing="false" onAction="#onAddnewProductButtonClick" text="Add" />
+    </children>
+</AnchorPane>
