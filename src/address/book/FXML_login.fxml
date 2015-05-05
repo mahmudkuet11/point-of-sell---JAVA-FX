@@ -13,6 +13,9 @@
          <children>
             <Label text="Username" textFill="#cccccc">
 
+                
+                
+                
             </Label>
             <TextField fx:id="username_input" prefHeight="29.0" prefWidth="254.0" promptText="Please Enter username" style="-fx-background-color: transparent; -fx-border-color: #e1e1e1; -fx-text-fill: #fff; -fx-border-width: 2px;" />
          </children>

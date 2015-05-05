@@ -84,9 +84,7 @@ public class FXML_new_voucherController implements Initializable {
         name.setCellValueFactory(new PropertyValueFactory<Product,String>("Name"));
         quantity.setCellValueFactory(new PropertyValueFactory<Product,String>("Qty"));
         price.setCellValueFactory(new PropertyValueFactory<Product,String>("Sprice"));
-        
         table.setItems(data);
-        
         
         table.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
 
