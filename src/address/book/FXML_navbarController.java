@@ -46,7 +46,6 @@ public class FXML_navbarController implements Initializable {
     private void onMenuitemClick(ActionEvent event) throws IOException {
         if(event.getSource().equals(add_new_product)){
             Parent root = FXMLLoader.load(getClass().getResource("FXML_add_new_product.fxml"));
-            root.getStylesheets().add("file:///C:/Users/mohar/Desktop/style.css");
             Scene scene = new Scene(root);
             Stage stage = (Stage)menubar.getScene().getWindow();
             stage.setScene(scene);
@@ -54,7 +53,6 @@ public class FXML_navbarController implements Initializable {
         }
         if(event.getSource().equals(search_product)){
             Parent root = FXMLLoader.load(getClass().getResource("FXML_search_product.fxml"));
-            root.getStylesheets().add("file:///C:/Users/mohar/Desktop/style.css");
             Scene scene = new Scene(root);
             Stage stage = (Stage)menubar.getScene().getWindow();
             stage.setScene(scene);
@@ -62,7 +60,6 @@ public class FXML_navbarController implements Initializable {
         }
         if(event.getSource().equals(add_new_cat)){
             Parent root = FXMLLoader.load(getClass().getResource("FXML_add_new_category.fxml"));
-            root.getStylesheets().add("file:///C:/Users/mohar/Desktop/style.css");
             Scene scene = new Scene(root);
             Stage stage = (Stage)menubar.getScene().getWindow();
             stage.setScene(scene);
@@ -70,7 +67,6 @@ public class FXML_navbarController implements Initializable {
         }
         if(event.getSource().equals(new_voucher)){
             Parent root = FXMLLoader.load(getClass().getResource("FXML_new_voucher.fxml"));
-            root.getStylesheets().add("file:///C:/Users/mohar/Desktop/style.css");
             Scene scene = new Scene(root);
             Stage stage = (Stage)menubar.getScene().getWindow();
             stage.setScene(scene);
@@ -78,7 +74,6 @@ public class FXML_navbarController implements Initializable {
         }
         if(event.getSource().equals(search_voucher)){
             Parent root = FXMLLoader.load(getClass().getResource("FXML_search_voucher.fxml"));
-            root.getStylesheets().add("file:///C:/Users/mohar/Desktop/style.css");
             Scene scene = new Scene(root);
             Stage stage = (Stage)menubar.getScene().getWindow();
             stage.setScene(scene);

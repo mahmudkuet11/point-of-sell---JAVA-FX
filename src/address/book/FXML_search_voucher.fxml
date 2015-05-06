@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="address.book.FXML_search_voucherController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="address.book.FXML_search_voucherController">
     <children>
         <fx:include source="FXML_navbar.fxml" />
         <Pane layoutX="116.0" layoutY="24.0" prefHeight="70.0" prefWidth="800.0" styleClass="title" AnchorPane.bottomAnchor="506.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="24.0">
@@ -16,19 +16,19 @@
                <font>
                   <Font name="System Bold" size="18.0" />
                </font></Label>
-            <TextField layoutX="267.0" layoutY="19.0" prefHeight="25.0" prefWidth="203.0" promptText="Search by customer name..." />
+            <TextField fx:id="search_name" layoutX="267.0" layoutY="19.0" onKeyReleased="#searchVoucherByName" prefHeight="25.0" prefWidth="203.0" promptText="Search by customer name..." />
             
          </children>
         </Pane>
-      <TableView layoutX="27.0" layoutY="94.0" prefHeight="200.0" prefWidth="740.0">
+      <TableView fx:id="table" layoutX="27.0" layoutY="94.0" prefHeight="200.0" prefWidth="740.0">
         <columns>
-          <TableColumn prefWidth="88.0" text="Date" />
-          <TableColumn prefWidth="193.0" text="Customer name" />
-            <TableColumn prefWidth="149.0" text="Phone" />
-            <TableColumn prefWidth="93.0" text="Total amount" />
-            <TableColumn prefWidth="70.0" text="Discount" />
-            <TableColumn prefWidth="81.0" text="Paid" />
-            <TableColumn prefWidth="65.0" text="Due" />
+          <TableColumn fx:id="date_c" prefWidth="88.0" text="Date" />
+          <TableColumn fx:id="name_c" prefWidth="193.0" text="Customer name" />
+            <TableColumn fx:id="phone_c" prefWidth="149.0" text="Phone" />
+            <TableColumn fx:id="total_c" prefWidth="93.0" text="Total amount" />
+            <TableColumn fx:id="discount_c" prefWidth="70.0" text="Discount" />
+            <TableColumn fx:id="paid_c" prefWidth="81.0" text="Paid" />
+            <TableColumn fx:id="due_c" prefWidth="65.0" text="Due" />
         </columns>
       </TableView>
       <Separator layoutX="27.0" layoutY="317.0" prefHeight="3.0" prefWidth="740.0" />
@@ -37,41 +37,41 @@
             <VBox layoutX="27.0" layoutY="349.0" spacing="10.0">
                <children>
                   <Label layoutX="27.0" layoutY="349.0" text="Customer name" />
-                  <TextField layoutX="27.0" layoutY="375.0" />
+                  <TextField fx:id="name" layoutX="27.0" layoutY="375.0" />
                </children>
             </VBox>
             <VBox layoutX="186.0" layoutY="349.0" spacing="10.0">
                <children>
                   <Label layoutX="27.0" layoutY="349.0" text="Phone" />
-                  <TextField layoutX="27.0" layoutY="375.0" />
+                  <TextField fx:id="phone" layoutX="27.0" layoutY="375.0" />
                </children>
             </VBox>
             <VBox layoutX="349.0" layoutY="349.0" spacing="10.0">
                <children>
                   <Label layoutX="27.0" layoutY="349.0" text="Total" />
-                  <TextField layoutX="27.0" layoutY="375.0" prefHeight="25.0" prefWidth="89.0" />
+                  <TextField fx:id="total" editable="false" layoutX="27.0" layoutY="375.0" prefHeight="25.0" prefWidth="89.0" />
                </children>
             </VBox>
             <VBox layoutX="448.0" layoutY="349.0" spacing="10.0">
                <children>
                   <Label layoutX="27.0" layoutY="349.0" text="Discount" />
-                  <TextField layoutX="27.0" layoutY="375.0" prefHeight="25.0" prefWidth="89.0" />
+                  <TextField fx:id="discount" layoutX="27.0" layoutY="375.0" onKeyReleased="#calculateDue" prefHeight="25.0" prefWidth="89.0" />
                </children>
             </VBox>
             <VBox layoutX="548.0" layoutY="349.0" spacing="10.0">
                <children>
                   <Label layoutX="27.0" layoutY="349.0" text="Paid" />
-                  <TextField layoutX="27.0" layoutY="375.0" prefHeight="25.0" prefWidth="89.0" />
+                  <TextField fx:id="paid" layoutX="27.0" layoutY="375.0" onKeyReleased="#calculateDue" prefHeight="25.0" prefWidth="89.0" />
                </children>
             </VBox>
             <VBox layoutX="651.0" layoutY="349.0" spacing="10.0">
                <children>
                   <Label layoutX="27.0" layoutY="349.0" text="Due" />
-                  <TextField layoutX="27.0" layoutY="375.0" prefHeight="25.0" prefWidth="89.0" />
+                  <TextField fx:id="due" editable="false" layoutX="27.0" layoutY="375.0" prefHeight="25.0" prefWidth="89.0" />
                </children>
             </VBox>
          </children>
       </HBox>
-      <Button layoutX="647.0" layoutY="422.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="109.0" text="Update Voucher" />
+      <Button fx:id="update" layoutX="647.0" layoutY="422.0" mnemonicParsing="false" onAction="#onUpdateVoucherButtonClick" prefHeight="25.0" prefWidth="109.0" text="Update Voucher" />
     </children>
 </AnchorPane>
