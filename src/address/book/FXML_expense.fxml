@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="address.book.FXML_expenseController">
+    <children>
+        <fx:include source="FXML_navbar.fxml" />  
+      <Pane layoutX="116.0" layoutY="24.0" prefHeight="70.0" prefWidth="800.0" styleClass="title" AnchorPane.bottomAnchor="506.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="24.0">
+         <children>
+            <Label layoutX="28.0" layoutY="18.0" styleClass="title" text="NEW EXPENSE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Label>
+         </children>
+      </Pane>
+      <HBox layoutX="130.0" layoutY="126.0" spacing="30.0">
+         <children>
+            <Label layoutX="130.0" layoutY="130.0" text="Expense name">
+               <HBox.margin>
+                  <Insets top="3.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="name" layoutX="242.0" layoutY="126.0" prefHeight="25.0" prefWidth="349.0" />
+         </children>
+      </HBox>
+      <HBox layoutX="130.0" layoutY="173.0" spacing="30.0">
+         <children>
+            <Label layoutX="130.0" layoutY="130.0" text="Note">
+               <HBox.margin>
+                  <Insets right="50.0" top="3.0" />
+               </HBox.margin>
+            </Label>
+            <TextArea fx:id="note" prefHeight="76.0" prefWidth="350.0" />
+         </children>
+      </HBox>
+      <HBox layoutX="131.0" layoutY="288.0" spacing="30.0">
+         <children>
+            <Label layoutX="130.0" layoutY="130.0" text="Amount">
+               <HBox.margin>
+                  <Insets right="33.0" top="3.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="amount" layoutX="242.0" layoutY="126.0" prefHeight="25.0" prefWidth="349.0" />
+         </children>
+      </HBox>
+      <Button layoutX="503.0" layoutY="350.0" mnemonicParsing="false" onAction="#onSubmitButtonClick" prefHeight="25.0" prefWidth="82.0" text="Submit" />
+    </children>
+</AnchorPane>

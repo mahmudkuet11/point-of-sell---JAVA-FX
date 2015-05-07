@@ -12,7 +12,7 @@ package address.book;
 public class Voucher {
     
     private String Date,Name,Phone;
-    private float Total,Discount,Paid,Due;
+    private float Total,Discount,Paid,Due,Purchase,Revenue;
     
     public Voucher(String date, String name, String phone, float total, float discount, float paid, float due){
         this.Date = date;
@@ -22,6 +22,16 @@ public class Voucher {
         this.Discount = discount;
         this.Paid = paid;
         this.Due = due;
+    }
+
+    public Voucher(String date, float total, float discount, float paid, float due, float purchase, float revenue){
+        this.Date = date;
+        this.Total = total;
+        this.Discount = discount;
+        this.Paid = paid;
+        this.Due = due;
+        this.Purchase = purchase;
+        this.Revenue = revenue;
     }
 
     public String getDate() {
@@ -78,6 +88,22 @@ public class Voucher {
 
     public void setDue(float Due) {
         this.Due = Due;
+    }
+
+    public float getPurchase() {
+        return Purchase;
+    }
+
+    public void setPurchase(float Purchase) {
+        this.Purchase = Purchase;
+    }
+
+    public float getRevenue() {
+        return Revenue;
+    }
+
+    public void setRevenue(float Revenue) {
+        this.Revenue = Revenue;
     }
     
 }
