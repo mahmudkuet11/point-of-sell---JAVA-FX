@@ -222,8 +222,9 @@ public class FXML_new_voucherController implements Initializable {
                 String cat = data.get(i).getName();
                 String barcode = data.get(i).getBarcode();
                 float Sprice = data.get(i).getSprice();
-                int quantity = data.get(i).getQty();
+                float quantity = data.get(i).getQty();
                 db.executeUpdate("insert into orders (voucher_id,barcode,category,price,quantity) values ("+ voucher_id +",'"+ barcode +"','"+ cat +"',"+ Sprice +","+ quantity +")");    
+                reduceQuantity(barcode,quantity);
             }
             JOptionPane.showMessageDialog(null, "Success");
             
@@ -231,6 +232,28 @@ public class FXML_new_voucherController implements Initializable {
             JOptionPane.showMessageDialog(null, "Something error");
         }
         
+    }
+    
+    public void reduceQuantity(String barcode, float qty){
+        try {
+            Database db = new Database();
+            Connection c = db.getConnection();
+            ResultSet rs = c.createStatement().executeQuery("select quantity from categories where barcode='"+ barcode +"'");
+            System.out.println("qty param " + qty);
+            System.out.println("barcode "+barcode);
+            System.out.println("qty db " + rs.getFloat("quantity"));
+            qty = rs.getFloat("quantity") - qty;
+            System.out.println("after " + qty);
+            rs.close();
+            c.close();
+            db = new Database();
+            c = db.getConnection();
+            c.createStatement().executeUpdate("UPDATE categories SET quantity="+ qty +" WHERE barcode='"+ barcode +"'");
+            c.commit();
+            c.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(FXML_new_voucherController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
 

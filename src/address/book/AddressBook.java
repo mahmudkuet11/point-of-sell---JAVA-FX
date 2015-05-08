@@ -20,7 +20,6 @@ public class AddressBook extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("FXML_home.fxml"));
-        root.getStylesheets().add("file:///C:/Users/mohar/Desktop/style.css");
         Scene scene = new Scene(root);
         
         stage.setScene(scene);

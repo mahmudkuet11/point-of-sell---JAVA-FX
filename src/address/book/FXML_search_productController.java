@@ -53,7 +53,7 @@ public class FXML_search_productController implements Initializable {
     @FXML
     private TableColumn<Product,String> name;
     @FXML
-    private TableColumn<Product,Integer> qty;
+    private TableColumn<Product,Float> qty;
     @FXML
     private TableColumn<Product,Float> p_price;
     @FXML
@@ -83,7 +83,7 @@ public class FXML_search_productController implements Initializable {
 
         barcode.setCellValueFactory(new PropertyValueFactory<Product,String>("Barcode"));
         name.setCellValueFactory(new PropertyValueFactory<Product,String>("Name"));
-        qty.setCellValueFactory(new PropertyValueFactory<Product,Integer>("Qty"));
+        qty.setCellValueFactory(new PropertyValueFactory<Product,Float>("Qty"));
         p_price.setCellValueFactory(new PropertyValueFactory<Product,Float>("Pprice"));
         s_price.setCellValueFactory(new PropertyValueFactory<Product,Float>("Sprice"));
 
@@ -98,7 +98,7 @@ public class FXML_search_productController implements Initializable {
                 
                 String barcode = products.getFocusModel().getFocusedItem().getBarcode();
                 String name = products.getFocusModel().getFocusedItem().getName();
-                int qty = products.getFocusModel().getFocusedItem().getQty();
+                float qty = products.getFocusModel().getFocusedItem().getQty();
                 float p_price = products.getFocusModel().getFocusedItem().getPprice();
                 float s_price = products.getFocusModel().getFocusedItem().getSprice();
                 
@@ -119,11 +119,11 @@ public class FXML_search_productController implements Initializable {
             rs = c.createStatement().executeQuery("select * from categories");
             while(rs.next()){
                 String barcode,name;
-                int qty;
+                float qty;
                 float pprice,sprice;
                 barcode = rs.getString("barcode");
                 name = rs.getString("name");
-                qty = rs.getInt("quantity");
+                qty = rs.getFloat("quantity");
                 pprice = rs.getFloat("purchase_price");
                 sprice = rs.getFloat("sell_price");
                 

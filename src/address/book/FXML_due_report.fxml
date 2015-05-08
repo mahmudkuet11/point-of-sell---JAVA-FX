@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="address.book.FXML_due_reportController">
+    <children>
+        <fx:include source="FXML_navbar.fxml" />
+      <Pane layoutX="116.0" layoutY="24.0" prefHeight="70.0" prefWidth="800.0" styleClass="title" AnchorPane.bottomAnchor="506.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="24.0">
+         <children>
+            <Label layoutX="28.0" layoutY="18.0" styleClass="title" text="DUE REPORT">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Label>
+         </children>
+      </Pane>
+      <TableView fx:id="table" layoutX="26.0" layoutY="125.0" prefHeight="278.0" prefWidth="747.0">
+        <columns>
+          <TableColumn fx:id="date" prefWidth="103.0" text="Date" />
+          <TableColumn fx:id="name" prefWidth="157.0" text="Customer name" />
+            <TableColumn fx:id="phone" prefWidth="132.0" text="Phone" />
+            <TableColumn fx:id="purchase" prefWidth="96.0" text="Total purchase" />
+            <TableColumn fx:id="discount" prefWidth="74.0" text="Discount" />
+            <TableColumn fx:id="paid" prefWidth="97.0" text="Paid" />
+            <TableColumn fx:id="due" prefWidth="87.0" text="Due" />
+        </columns>
+      </TableView>
+      <HBox layoutX="617.0" layoutY="441.0" spacing="20.0">
+         <children>
+            <Label layoutX="599.0" layoutY="437.0" text="Total due:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="total_due" layoutX="683.0" layoutY="439.0" text="0">
+               <HBox.margin>
+                  <Insets top="2.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+    </children>
+</AnchorPane>

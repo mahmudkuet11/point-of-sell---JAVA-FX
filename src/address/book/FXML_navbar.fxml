@@ -35,6 +35,8 @@
             <Menu mnemonicParsing="false" text="Report">
                <items>
                   <MenuItem fx:id="net_profit" mnemonicParsing="false" onAction="#onMenuitemClick" text="Net profit report by date" />
+                  <MenuItem fx:id="due_report" mnemonicParsing="false" onAction="#onMenuitemClick" text="Due report" />
+                  <MenuItem fx:id="remaining_product_report" mnemonicParsing="false" onAction="#onMenuitemClick" text="Remaining product report" />
                </items>
             </Menu>
         </menus>

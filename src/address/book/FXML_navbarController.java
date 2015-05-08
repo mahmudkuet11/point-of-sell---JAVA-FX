@@ -41,6 +41,10 @@ public class FXML_navbarController implements Initializable {
     private MenuItem new_expense;
     @FXML
     private MenuItem net_profit;
+    @FXML
+    private MenuItem due_report;
+    @FXML
+    private MenuItem remaining_product_report;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -93,6 +97,20 @@ public class FXML_navbarController implements Initializable {
         }
         if(event.getSource().equals(net_profit)){
             Parent root = FXMLLoader.load(getClass().getResource("FXML_net_profit_report_by_date.fxml"));
+            Scene scene = new Scene(root);
+            Stage stage = (Stage)menubar.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }
+        if(event.getSource().equals(due_report)){
+            Parent root = FXMLLoader.load(getClass().getResource("FXML_due_report.fxml"));
+            Scene scene = new Scene(root);
+            Stage stage = (Stage)menubar.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }
+        if(event.getSource().equals(remaining_product_report)){
+            Parent root = FXMLLoader.load(getClass().getResource("FXML_remaining_product_report.fxml"));
             Scene scene = new Scene(root);
             Stage stage = (Stage)menubar.getScene().getWindow();
             stage.setScene(scene);

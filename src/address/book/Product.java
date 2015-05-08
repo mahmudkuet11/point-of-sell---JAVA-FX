@@ -12,10 +12,9 @@ package address.book;
 public class Product {
     // note all variable name is capitalized. beause of camel caps getter method name
     private String Barcode, Name;
-    private int Qty;
-    private float Pprice,Sprice;
+    private float Pprice,Sprice,Qty;
     
-    public Product(String barcode, String name, int qty, float p_price, float s_price){
+    public Product(String barcode, String name, float qty, float p_price, float s_price){
         this.Barcode = barcode;
         this.Name = name;
         this.Qty = qty;
@@ -29,7 +28,7 @@ public class Product {
     public String getName(){
         return this.Name;
     }
-    public int getQty(){
+    public float getQty(){
         return this.Qty;
     }
     public float getPprice(){
@@ -44,7 +43,7 @@ public class Product {
     public void setBarcode(String barcode){
         this.Barcode = barcode;
     }
-    public void setQty(int qty){
+    public void setQty(float qty){
         this.Qty = qty;
     }
 }
